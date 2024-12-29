@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Header Section -->
+        <header>
+            <h1>Weather App</h1>
+            <div class="toggles">
+                <label for="darkModeToggle">Dark Mode:</label>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+                <label for="unitToggle">Temperature Unit:</label>
+                <label class="switch">
+                    <input type="checkbox" id="unitToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <section id="search">
+            <button id="getCurrentWeather">Get Weather by Current Location</button>
+            <br><br>
+            <label for="city">Search by City:</label>
+            <input type="text" id="city" placeholder="Enter city name">
+            <button id="searchWeather">Search</button>
+        </section>
+
+        <!-- Current Weather Section -->
+        <section id="currentWeather">
+            <h2>Current Weather</h2>
+            <div id="weatherDetails">
+                <p id="currentLocation">Location: Not Available</p>
+                <p id="currentTemperature">Temperature: --</p>
+                <p id="currentDetails">Weather: --</p>
+                <p id="sunriseSunset">Sunrise/Sunset: --</p>
+            </div>
+            <div id="map" style="width: 100%; height: 300px;"></div>
+        </section>
+
+        <!-- 7-Day Forecast Section -->
+        <section id="forecast">
+            <h2>7-Day Forecast</h2>
+            <div id="forecastCards" class="forecast-container"></div>
+        </section>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
